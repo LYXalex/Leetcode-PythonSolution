@@ -2,10 +2,17 @@
 # ## time complexity O(n) number of nodes
 # ## space complexity O(n)
 
+class TreeNode:
+    def __init__(self,val=0,left=None,right=None):
+        self.left = left
+        self.right = right
+        self.val = val
+
+
 
 class Solution:
     # iterative
-    def levelOrder1(self, root: TreeNode) -> List[List[int]]:
+    def levelOrder1(self, root: TreeNode): #-> List[List[int]]:
         if not root:
             return []
         stack, ans = [(root, 0)], []
@@ -21,7 +28,7 @@ class Solution:
         return ans
 
     # recursion
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+    def levelOrder(self, root: TreeNode):# -> List[List[int]]:
 
         def dfs(cur, ans, level):
             if not cur:
